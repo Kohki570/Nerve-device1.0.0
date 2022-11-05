@@ -1,0 +1,295 @@
+
+
+.outline{
+  position:absolute;
+  top: 33.3%;
+  left: 25%;
+  width: 49.5%;
+  height: 33%;
+}
+
+.log{
+  word-break: break-all;
+  white-space: nowrap;
+  color: white;
+  margin-top: 4%;
+  margin-left: 7.5%;
+  width: 35%;
+  height: 25%;
+  font-size: 3vw;
+}
+/*横1260px以上のとき*/
+@media(min-width: 1260px) {
+  .log {
+    font-size: 5.5vh;
+  }
+}
+
+.inline{
+  position:absolute;
+  top: 8.8%;
+  left: 50.2%;
+  width: 45%;
+  height: 80%;
+  font-size: 2.5vw;
+}
+.name{
+  white-space: nowrap;
+  position: absolute;
+  left: 3%;
+  top: 13%;
+  color: white;
+  line-height: 2.2vw;
+}
+
+.namebox{
+  white-space: nowrap;
+  width: 17.5vw;
+  height: 2vw;
+  
+}
+
+
+
+.birthday{
+  white-space: nowrap;
+  position: relative;
+  left: 2%;
+  top: 60%;
+  color: white;
+  line-height: 2.2vw;
+}
+
+.birthbox{
+  white-space: nowrap;
+  position: absolute;
+  width: 18vw;
+  height: 2vw;
+  
+}
+@media(min-width: 1260px) {
+  .inline {
+    font-size: 5vh;
+    
+  }
+  .name{
+      line-height: 4.5vh;
+  }
+  .namebox{
+      width: 34vh;
+      height: 4vh;
+  }
+  .birth{
+      line-height: 4.5vh;
+  }
+  .birthbox{
+      width: 34vh;
+      height: 4vh;
+  }
+}
+
+
+.date{
+  white-space: nowrap;
+  
+  left: 0%;
+  top: 0%;
+  color: white;
+  font-size: 100%;
+}
+
+.birth{
+  white-space: nowrap;
+  
+  left: 0%;
+  top: 0%;
+  color: white;
+  font-size: 100%;
+}
+
+.signup{
+
+  position: absolute;
+  left: 64.7%;
+  top: 66.6%;
+  color: white;
+  width: 10%;
+  height: 6%;
+  font-size: 1.75vw;
+  background-color:#0078BC ;
+  border-color: #878894;
+  outline-color: #878894;
+}
+.signup:hover{
+  background-color: #00659b;
+}
+
+/*横1260px以上のとき*/
+@media(min-width: 1260px) {
+  .signup {
+    font-size: 3.5vh;
+  }
+}
+
+/*ここから*/
+
+
+html, body {
+  vertical-align: baseline;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  caret-color: transparent;
+	-webkit-user-drag: none;
+  user-select: none;
+  
+}
+
+html {
+  position: relative;
+  width: 100vw;
+  height: -webkit-fill-available;
+  overflow: hidden;
+
+
+  
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  
+  line-height: 1.3;
+  font-family: 'M PLUS Rounded 1c', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+  letter-spacing: 0.85px;
+  letter-spacing: .085rem;
+}
+
+
+
+/*重要*/
+img {
+  display: block;
+  width: 100% !important;
+  height: -webkit-fill-available !important;
+  z-index: 0;
+}
+
+/* ====================
+Layout
+ ==================== */
+.l-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.l-wrap__container {
+    display: block;
+    position: relative;
+    opacity: 0;
+    width: 100vw;
+    max-width: 177.891vh;
+    height: 100vh;
+    max-height: 56.214vw;
+    overflow: hidden;
+  }
+  
+/*横画面処理*/
+
+.p-port__inner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0.03deg);
+  transform: translate(-50%, -50%) rotate(0.03deg);
+  width: 80%;
+}
+
+.p-port__text {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 13px;
+    text-align: center;
+  }
+
+.p-port__img {
+  position: relative;
+  margin: 20px auto 0;
+  width: 30%;
+  max-width: 160px;
+  text-align: center;
+}
+
+.p-port__note {
+  position: relative;
+  margin: 26px auto 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-align: center;
+}
+
+
+
+/* ====================
+Project
+ ==================== */
+.p-enter {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(#101a22), to(#000));
+  background: linear-gradient(to top, #101a22 0%, #000 100%);
+  width: 100%;
+  height: 100%;
+}
+
+
+/*横画面で楽しんで*/
+
+@media screen and (orientation: portrait){
+    .is-land {
+      display: none !important;
+    }
+    .is-port {
+      display: block;
+    }
+    .l-wrap {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+    .p-port {
+      opacity: 1;
+    }
+  }

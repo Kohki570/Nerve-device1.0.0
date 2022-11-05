@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/731cb387d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="10.salar de uyuni.css">
+    <title>salar de uyuny</title>
+</head>
+
+
+
+<body>
+ <!--横画面処理-->
+ <div class="p-port">
+    <div class="p-port__inner">
+      <div class="p-port__text">このサイトは横画面でお楽しみください</div>
+      
+      <div class="p-port__note">※デフォルトのブラウザでお楽しみください。</div>
+    </div>
+  </div>
+  <!--/横画面処理-->
+  <!--画面-->
+  <div class="l-wrap js-wrap">
+    
+    <div class="l-wrap__container" style="opacity: 1;">
+   
+  
+      <div class="p-enter" >
+        <img src="HP.png" class="HP">
+        <div class="message" id="name">non</div>
+          <img  src="ウユニ塩湖.png" class = "accel">
+          <div class="loader loader-default is-active" data-blink data-text="最終フェイズ実行中" id="load"><div class="per" id="nuu" data-num="101">0</div><div class="pers">%</div></div>
+
+      </div> 
+      <!--中身-->
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"  />
+        <label class="menu-open-button" for="menu-open" onclick="opn();">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a class="menu-item green" onclick="green();"> <i class="fa-solid fa-user"></i> </a>
+        <a  class="menu-item red" onclick="red();"> <i class="fa-solid fa-userfa fa-question"></i> </a>
+        <a class="menu-item purple" onclick="purple();" >  <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    
+    
+        
+     </nav>
+       <!--/中身-->
+    </div>
+
+  </div>
+  <!--/画面-->
+
+
+    
+    <script type = "text/javascript">
+      window.onload = function(){
+        var data = location.href.split("?")[1];
+        var text = data.split("=")[1];
+        document.getElementById("name").innerHTML = decodeURIComponent(text);
+        }  
+   
+
+
+
+      let load = document.getElementById('load');
+       
+      function opn(){
+            load.style.cssText = "z-index:0;"
+        }
+          
+
+        function green(){
+            load.style.cssText = "z-index:10;"
+
+
+        }
+        
+
+        function red(){
+          alert("Option: \n\ 今後のアップデートをお待ちください")
+          
+        };
+        
+     
+        function purple(){
+         
+                
+          
+               var result = confirm('サインアウトしますか？');
+              if(result){
+                window.location.href = "1.Nerve.html";
+                alert("Sign out: \n\ サインアウトしました")
+              }else{
+
+              }
+        };
+
+
+        const shuffleNumberCounter = (target) => {
+          const targetNum = Number(target.getAttribute('data-num'))
+          
+          if (!targetNum) {         
+
+            return
+          }
+
+        
+          let counterData = null
+          const speed = 80000 / targetNum
+          let initNum = 0
+        
+          const countUp = () => {
+            if (Number.isInteger(targetNum)) {
+              target.innerHTML = initNum
+              
+            } else {
+              target.innerHTML = `${initNum}.${Math.floor(Math.random() * 9)}`
+              
+            }
+        
+            initNum++
+        
+            if (initNum > targetNum) {
+              target.innerHTML = targetNum
+              clearInterval(counterData)
+              window.location.href = "1.Nerve.html";
+              alert("Sign out: \n\ 強制サインアウトしました")
+            }
+
+
+          }
+           
+        
+    
+ 
+           
+         
+          counterData = setInterval(countUp, speed)
+        }
+        
+        const target = document.querySelector('.per');
+
+       shuffleNumberCounter(target)
+
+
+
+
+        
+
+
+          
+
+</script>
+</body>
+</html>
