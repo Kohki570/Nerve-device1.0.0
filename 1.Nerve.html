@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="1.Nerve.css">
+
+    
+
+    <title>Nerve device</title>
+</head>
+
+<body>
+  <!--横画面処理-->
+  <div class="p-port">
+    <div class="p-port__inner">
+      <div class="p-port__text">このサイトは横画面でお楽しみください</div>
+      
+      <div class="p-port__note">※デフォルトのブラウザでお楽しみください。</div>
+    </div>
+  </div>
+  <!--/横画面処理-->
+  <!--画面-->
+  <div class="l-wrap js-wrap">
+
+    <div class="l-wrap__container" style="opacity: 1;">
+  
+      <div class="p-enter">
+        
+          <img  src="1.stand by.png" class = "standbyimg">
+      </div> 
+      <!--中身-->
+      <div onclick="location.href='2.リンクスタート.html'"id="RealtimeClockArea2" class = "time"></div>
+        <p class= bos>
+       <button id="start-btn" class= "start">mic on</button>
+        <button id="stop-btn" class="off">mic off</button>
+       </p>
+       <div class="border-res">
+        <div id="result-div"class="result">mic onボタンを押して下さい</div>
+      </div> 
+       <!--/中身-->
+    </div>
+
+  </div>
+  <!--/画面-->
+   
+    <script>
+      const startBtn = document.querySelector('#start-btn');
+      const resultDiv = document.querySelector('#result-div');
+      const stopBtn = document.querySelector('#stop-btn');
+      const deleteBtn = document.querySelector('#delete-btn');
+
+      window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;      let recognition = new SpeechRecognition();
+    
+      recognition.lang = 'ja-JP';
+      recognition.interimResults = true;
+      recognition.continuous = true;
+    
+      let finalTranscript = ''; // 確定した認識結果 ja-JP
+
+        
+    
+    
+      recognition.onresult = (event) => {
+        let interimTranscript = ''; // 暫定の認識結果
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          let transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+          } else {
+            interimTranscript = transcript;
+          }
+        }
+        resultDiv.innerHTML = '<i style="color:#ffffff;">' + interimTranscript + '</i">';
+
+        if(interimTranscript == "リンクスタート" ) {
+            
+          location.href = "2.リンクスタート.html";
+        }
+
+
+      }
+      let load = document.getElementById('result-div');
+
+      startBtn.onclick = () => {
+        recognition.start();
+        load.textContent = "音声認識ON"
+        
+      }
+      
+      stopBtn.onclick = () => {
+        recognition.stop();
+        load.textContent = "mic onボタンを押して下さい"
+        //document.location.reload();
+      }
+
+      function set2fig(num) {
+        // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+        var ret;
+        if( num < 10 ) { ret = "0" + num; }
+        else { ret = num; }
+        return ret;
+     }
+     function showClock2() {
+        var nowTime = new Date();
+        var nowHour = set2fig( nowTime.getHours() );
+        var nowMin  = set2fig( nowTime.getMinutes() );
+        var nowSec  = set2fig( nowTime.getSeconds() );
+        var msg =  nowHour + ":" + nowMin;
+        document.getElementById("RealtimeClockArea2").innerHTML = msg;
+     }
+     setInterval('showClock2()',1000);
+    </script>
+        
+
+    
+
+</body>
+</html>

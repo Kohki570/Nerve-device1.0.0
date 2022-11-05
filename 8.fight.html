@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=" initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/731cb387d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="8.fight.css">
+    <title>Accel</title>
+</head>
+
+
+
+<body>
+ <!--横画面処理-->
+ <div class="p-port">
+    <div class="p-port__inner">
+      <div class="p-port__text">このサイトは横画面でお楽しみください</div>
+      
+      <div class="p-port__note">※デフォルトのブラウザでお楽しみください。</div>
+    </div>
+  </div>
+  <!--/横画面処理-->
+  <!--画面-->
+  <div class="l-wrap js-wrap">
+
+    <div class="l-wrap__container" style="opacity: 1;">
+  
+      <div class="p-enter">
+        <img src="HP.png" class="HP">
+        <div class="message" id="name">non</div>
+         <img src="レイピアhold.png" class="asna">
+          <img  src="はじまりの町worning2.jpg" class = "accel">
+          
+      </div>
+        <img src="master.png" class="master">
+        <div class="heart" onclick="hart()">♥</div>
+    
+      <!--中身-->
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+        <label class="menu-open-button" for="menu-open">
+         <span class="lines line-1"></span>
+         <span class="lines line-2"></span>
+         <span class="lines line-3"></span>
+       </label>
+     
+        <a class="menu-item green" onclick="green();"> <i class="fa fa-screwdriver-wrench"></i> </a>
+        <a  class="menu-item red" onclick="red();"> <i class="fa fa-question"></i> </a>
+        <a class="menu-item purple" onclick="purple();" >  <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    
+    
+        
+     </nav>
+
+
+
+
+
+
+       <!--/中身-->
+    </div>
+
+  </div>
+  <!--/画面-->
+
+    
+
+    <script type = "text/javascript">
+      window.onload = function(){
+        var data = location.href.split("?")[1];
+        var text = data.split("=")[1];
+        document.getElementById("name").innerHTML = decodeURIComponent(text);
+        }  
+        function green(){
+            alert("Option: \n\ 今後のアップデートをお待ちください")
+        };
+        function red(){
+            alert("Help: \n\ 今後のアップデートをお待ちください。")
+        }
+        function purple(){
+            alert("Sing out: \n\ サインアウトできません")
+        };
+        function hart(){
+          var text = document.getElementById("name").innerHTML;
+          window.location.href = "9.clear.html?data="+encodeURIComponent(text);
+        }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

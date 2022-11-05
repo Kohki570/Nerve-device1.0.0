@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME MASTER</title>
+    <link rel="stylesheet" href="6.master.css">
+</head>
+<body>
+         <!--横画面処理-->
+  <div class="p-port">
+    <div class="p-port__inner">
+      <div class="p-port__text">このサイトは横画面でお楽しみください</div>
+      
+      <div class="p-port__note">※デフォルトのブラウザでお楽しみください。</div>
+    </div>
+  </div>
+  <!--/横画面処理-->
+  <!--画面-->
+  <div class="l-wrap js-wrap">
+
+    <div class="l-wrap__container" style="opacity: 1;">
+  
+      <div class="p-enter">
+        <img src="HP.png" class="HP">
+        <div class="message" id="name" onclick="na()">non</div>
+        <div id="state" class="state">▶</div>
+        <img  src="はじまりの町mine.png" id="mine" class = "mine2" onclick="mine2()">
+        <video src="master1.mp4" autoplay muted playsinline webkit-playsinline onended="end();" class="master" id="video"  onclick="vi()"></video>
+      </div> 
+      <!--中身-->
+      
+       <!--/中身-->
+    </div>
+
+  </div>
+  <!--/画面-->
+  <script>
+    let state = document.getElementById('state');
+    let mine = document.getElementById('mine');
+    let viddd = document.getElementById('video');
+
+    function vi() {
+      viddd.pause();
+      state.textContent = "||";
+      mine.style.cssText = "z-index:10;"
+    }
+
+    function mine2(){
+      viddd.play();
+      state.textContent = "▶"
+      mine.style.cssText = "z-index:0;"
+    }
+    function na(){
+      var text = document.getElementById("name").innerHTML;
+           location.href = "7.accel.html?data="+encodeURIComponent(text);
+    }
+
+
+    window.onload = function(){
+      var data = location.href.split("?")[1];
+      var text = data.split("=")[1];
+      document.getElementById("name").innerHTML = decodeURIComponent(text);
+      }
+
+    function end(){
+      var text = document.getElementById("name").innerHTML;
+           location.href = "7.accel.html?data="+encodeURIComponent(text);
+          }
+ 
+
+  </script>  
+
+
+
+</body>
+</html>
+
+
